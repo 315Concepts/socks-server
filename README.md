@@ -13,14 +13,14 @@ These are the versions we track. When one moves, this table moves.
 | Component  | Version   | Source                         | Notes                                         |
 | ---------- | --------- | ------------------------------ | --------------------------------------------- |
 | Alpine     | 3.24.2    | `node:26-alpine` base image    | Floating tag from Node; SHA date 2026-09-22   |
-| Node.js    | 26.10.0   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
-| NPM        | 11.19.1   | `node:26-alpine` base image    |                                               |
-| Express    | 5.2.1     | `package.json` / lockfile      |                                               |
+| Node.js    | 26.11.1   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
+| NPM        | 11.20.0   | `node:26-alpine` base image    |                                               |
+| Express    | 5.3.0     | `package.json` / lockfile      |                                               |
 | TypeScript | 7.0.2     | `package.json` (dev only)      | Build-time only; not in the runtime image     |
 
 Supporting runtime deps:
 - **compression**: 1.8.2
-- **express-rate-limit**: 8.7.0
+- **express-rate-limit**: 8.7.1
 - **helmet**: 8.3.0
 - **ms**: 2.1.3
 

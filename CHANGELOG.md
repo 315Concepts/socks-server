@@ -4,6 +4,38 @@ All notable changes to SOCKS are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-10-13
+
+Routine dependency and base image refresh, with minor version bumps in `node` and `express` layers. No source or behavioural changes.
+
+### Changed
+
+- Base image `node:26-alpine` re-pinned to a newer digest.
+- Node.js 26.10.0 → 26.11.1 and npm 11.19.1 → 11.20.0 (from the base image).
+- `express` 5.2.1 → 5.3.0. This also moves its transitive dependencies: `body-parser` 2.3.0, `content-disposition` 2.0.1, `content-type` 2.1.0 (now a single hoisted copy instead of several), `proxy-addr` 2.0.8, `qs` 6.16.0 and `type-is` 2.1.0.
+- `express-rate-limit` 8.7.0 → 8.7.1.
+- `@types/node` 26.6.4 → 26.6.5.
+- `ip-address` 10.7.3 → 10.7.4 (transitive).
+- The README stack-version table is updated to match.
+
+### Stack
+
+| Component  | Version |
+| ---------- | ------- |
+| Alpine     | 3.24.2  |
+| Node.js    | 26.11.1 |
+| npm        | 11.20.0 |
+| Express    | 5.3.0   |
+| TypeScript | 7.0.2   |
+
+
+## [2.0.1] - 2026-10-6
+
+### Changed
+
+- Base image `node:26-alpine` re-pinned to a newer digest.
+
+
 ## [2.0.0] - 2026-10-5
 
 Moves the runtime to Node.js 26, which becomes LTS on 2026-10-28. This is a breaking change for the host-execution approach so per semver we are incrementing a major release version.
@@ -74,5 +106,7 @@ First public release.
 | TypeScript | 7.0.2   |
 
 
+[2.1.0]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.1.0
+[2.0.1]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.0.1
 [2.0.0]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.0.0
 [1.0.0]: https://github.com/315Concepts/SOCKS-server/releases/tag/v1.0.0
