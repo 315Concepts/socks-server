@@ -12,8 +12,8 @@ These are the versions we track. When one moves, this table moves.
 
 | Component  | Version   | Source                         | Notes                                         |
 | ---------- | --------- | ------------------------------ | --------------------------------------------- |
-| Alpine     | 3.24.2    | `node:26-alpine` base image    | Floating tag from Node; SHA date 2026-09-22   |
-| Node.js    | 26.11.1   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
+| Alpine     | 3.24.2    | `node:26-alpine` base image    | Floating `alpine` tag from Node image         |
+| Node.js    | 26.12.0   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
 | NPM        | 11.20.0   | `node:26-alpine` base image    |                                               |
 | Express    | 5.3.0     | `package.json` / lockfile      |                                               |
 | TypeScript | 7.0.2     | `package.json` (dev only)      | Build-time only; not in the runtime image     |
@@ -119,7 +119,15 @@ All configuration is through environment variables.
 - **Shutdown:** `SIGTERM`/`SIGINT` stops accepting connections, drops idle keep-alive connections, and exits once in-flight requests finish. If connections are still open after 5s they are closed and the process exits with code 1. A second signal forces an immediate exit. Compose allows 15 s before it kills the container.
 - **Timeouts:** request headers must arrive within 5s and the whole request within 10s, which limits slow-client (slowloris) attacks.
 - **Container hardening (compose):** read-only root filesystem, static dir mounted read-only, non-root user, `cap_drop: ALL`, `no-new-privileges`, `init: true`, and limits of 256MB memory, 1vCPU and 64 PIDs. Raise the limits if your traffic needs it.
-- **Behaviour:** `index.html` is served for directory paths that end in `/`. A directory path without the trailing slash returns 404; there is no redirect. There is no directory listing and no SPA fallback.
+- **Releasing:** requires running build, smoke, and version checks before tagging and pushing
+    - `git checkout -B update/<yymmdd.rev>`
+    - Bump `Dockerfile`, `package.json`, `package-lock.json`, and `README.md` values as appropriate
+    - `npm run build && npm run smoke && npm run versions`
+    - **Validate Results** and update `CHANGELOG.md`
+    - `git add -A && git commit -m <message>`
+    - `git tag -a v<x.x.x> -m "Release Version <x.x.x>`
+    - `git push && git push --tags`
+
 
 ## Scripts
 
