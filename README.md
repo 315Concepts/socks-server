@@ -12,8 +12,8 @@ These are the versions we track. When one moves, this table moves.
 
 | Component  | Version   | Source                         | Notes                                         |
 | ---------- | --------- | ------------------------------ | --------------------------------------------- |
-| Alpine     | 3.24.2    | `node:26-alpine` base image    | Floating `alpine` tag from Node image         |
-| Node.js    | 26.12.0   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
+| Alpine     | 3.24.3    | `node:26-alpine` base image    | Floating `alpine` tag from Node image         |
+| Node.js    | 26.12.1   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
 | NPM        | 11.20.0   | `node:26-alpine` base image    |                                               |
 | Express    | 5.3.0     | `package.json` / lockfile      |                                               |
 | TypeScript | 7.0.2     | `package.json` (dev only)      | Build-time only; not in the runtime image     |
