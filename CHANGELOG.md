@@ -4,6 +4,31 @@ All notable changes to SOCKS are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.1] - 2026-10-19
+
+Routine base image refresh, with patch version bump in `node` layer. No source or behavioural changes.
+
+### Changed
+
+- Base image `node:26-alpine` re-pinned to a newer digest.
+- Node.js 26.12.0 → 26.12.1 (from the base image)
+- The README stack-version table is updated to match.
+
+### Notes
+
+- The applied patch for NodeJS is the currently available remediation for [CVE-2026-111497](https://www.aikido.dev/blog/node2shell-nodejs-brotli-rce-cve-2026-111497) a.k.a. Node2Shell
+
+### Stack
+
+| Component  | Version |
+| ---------- | ------- |
+| Alpine     | 3.24.2  |
+| Node.js    | 26.12.0 |
+| npm        | 11.20.0 |
+| Express    | 5.3.0   |
+| TypeScript | 7.0.2   |
+
+
 ## [2.2.0] - 2026-10-19
 
 Routine base image refresh, with minor version bump in `node` layer. No source or behavioural changes.
@@ -127,6 +152,7 @@ First public release.
 | TypeScript | 7.0.2   |
 
 
+[2.2.1]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.2.1
 [2.2.0]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.2.0
 [2.1.0]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.1.0
 [2.0.1]: https://github.com/315Concepts/SOCKS-server/releases/tag/v2.0.1
