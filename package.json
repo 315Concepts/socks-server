@@ -1,6 +1,6 @@
 {
   "name": "socks-server",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Hyper-modern static server for the edge",
   "license": "MIT",
   "author": "Andrew Porter",
