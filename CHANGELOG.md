@@ -4,6 +4,27 @@ All notable changes to SOCKS are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-11-02
+
+Routine base image refresh, with minor version bump in `node` layer and patches to some support packages. No source or behavioural changes.
+
+### Changed
+
+- Base image `node:26-alpine` re-pinned to a newer digest.
+- Node.js 26.12.1 → 26.13.0 (from the base image)
+- The README stack-version table is updated to match.
+
+### Stack
+
+| Component  | Version |
+| ---------- | ------- |
+| Alpine     | 3.24.2  |
+| Node.js    | 26.13.0 |
+| npm        | 11.20.0 |
+| Express    | 5.3.0   |
+| TypeScript | 7.0.2   |
+
+
 ## [2.2.1] - 2026-10-19
 
 Routine base image refresh, with patch version bump in `node` layer. No source or behavioural changes.
@@ -17,13 +38,14 @@ Routine base image refresh, with patch version bump in `node` layer. No source o
 ### Notes
 
 - The applied patch for NodeJS is the currently available remediation for [CVE-2026-111497](https://www.aikido.dev/blog/node2shell-nodejs-brotli-rce-cve-2026-111497) a.k.a. Node2Shell
+- Previous artifacts _described_ this release as having Node v26.12.0 but as per the above CVE note it _actually shipped_ remediated v26.12.1
 
 ### Stack
 
 | Component  | Version |
 | ---------- | ------- |
 | Alpine     | 3.24.2  |
-| Node.js    | 26.12.0 |
+| Node.js    | 26.12.1 |
 | npm        | 11.20.0 |
 | Express    | 5.3.0   |
 | TypeScript | 7.0.2   |
