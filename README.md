@@ -12,15 +12,15 @@ These are the versions we track. When one moves, this table moves.
 
 | Component  | Version   | Source                         | Notes                                         |
 | ---------- | --------- | ------------------------------ | --------------------------------------------- |
-| Alpine     | 3.24.3    | `node:26-alpine` base image    | Floating `alpine` tag from Node image         |
-| Node.js    | 26.13.0   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
+| Alpine     | 3.24.4    | `node:26-alpine` base image    | Floating `alpine` tag from Node image         |
+| Node.js    | 26.13.1   | `node:26-alpine` base image    | Active LTS ("Lithium"), EOL 2029-04-30        |
 | NPM        | 11.20.0   | `node:26-alpine` base image    |                                               |
 | Express    | 5.3.0     | `package.json` / lockfile      |                                               |
 | TypeScript | 7.0.2     | `package.json` (dev only)      | Build-time only; not in the runtime image     |
 
 Supporting runtime deps:
 - **compression**: 1.8.2
-- **express-rate-limit**: 8.7.1
+- **express-rate-limit**: 8.7.4
 - **helmet**: 8.3.0
 - **ms**: 2.1.3
 
@@ -127,6 +127,7 @@ All configuration is through environment variables.
     - `git add -A && git commit -m <message>`
     - `git tag -a v<x.x.x> -m "Release Version <x.x.x>`
     - `git push && git push --tags`
+    - PR evidence can be generated with: `git log --oneline | head -n 1 && npm run build && npm run smoke && npm run versions`
 
 
 ## Scripts
